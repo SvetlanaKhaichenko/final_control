@@ -1,10 +1,11 @@
 package model.impl;
 
-import java.time.LocalDate;
+
+import java.util.Date;
 
 public class Dog extends Pets{
 
-    public Dog(String name, LocalDate birthday, String commands) {
+    public Dog(String name, Date birthday, String commands) {
         super(name, birthday, commands);
     }
 }
