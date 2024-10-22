@@ -6,7 +6,9 @@ import java.util.Date;
 
 public abstract class PackAnimals extends Animal {
 
-    public PackAnimals(String name, Date birthday, String commands) {
-        super(name, birthday, commands);
+
+    public PackAnimals(int id, String name, Date birthday, String commands, int TYPE_ID) {
+        super(id, name, birthday, commands, TYPE_ID);
     }
 }
+
