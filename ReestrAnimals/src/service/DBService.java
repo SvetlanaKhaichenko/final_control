@@ -73,5 +73,25 @@ public class DBService {
          }
 
     }
+    public Animal getAnimal (int id) throws SQLException {
+        statement = conn.prepareStatement("Select * From AllAnimals Where id = ?", rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+        statement.setInt(1, id);
+
+        rs = statement.executeQuery();
+        if (!rs.first())
+            return null;
+
+        Animal animal = service.getAnimalType(rs.getInt(1), rs.getString(2), rs.getDate(4), rs.getString(5), rs.getInt(3));
+            return animal;
+    }
+
+    public int totalAnimals() throws SQLException {
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery("Select count(1) from Allanimals");
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
 
 }
+

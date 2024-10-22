@@ -31,8 +31,9 @@ public class Animal implements Comparable<Animal>{
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() +
-                ": name='" + name + '\'' +
+        return getClass().getSimpleName() + ": "+
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", birthday=" + birthday +
                 ", commands='" + commands + '\'' +
                 "}\n";

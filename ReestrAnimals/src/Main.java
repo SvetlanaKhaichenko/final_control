@@ -2,6 +2,7 @@
 import model.Animal;
 import service.AnimalService;
 import service.DBService;
+import view.RunReestrView;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+    new RunReestrView().start();
 
 
     }

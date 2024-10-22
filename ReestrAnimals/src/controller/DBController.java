@@ -14,21 +14,32 @@ public class DBController {
         service.getConnectionDB();
     }
 
-    public void closeConnectionDB() throws SQLException{
+    public void closeConnectionDB() throws SQLException {
         service.closeConnectionDB();
     }
-    public  void showTypesAnimals() throws SQLException{
+
+    public void showTypesAnimals() throws SQLException {
         service.showTypesAnimals();
     }
-    public  void addAnimalInDB(Animal animal) throws SQLException{
+
+    public void addAnimalInDB(Animal animal) throws SQLException {
         service.addAnimalInDB(animal);
     }
 
-    public List<Animal> getAllAnimals() throws SQLException{
+    public List<Animal> getAllAnimals() throws SQLException {
         return service.getAllAnimals();
     }
-    public void changeCommandsAnAnimals(String commands, Animal animal) throws SQLException{
+
+    public void changeCommandsAnAnimals(String commands, Animal animal) throws SQLException {
         service.changeCommandsAnAnimals(commands, animal);
     }
+
+    public Animal getAnimal(int id) throws SQLException {
+       return service.getAnimal(id);
+    }
+    public int totalAnimals() throws SQLException {
+        return service.totalAnimals();
+    }
+
 
 }

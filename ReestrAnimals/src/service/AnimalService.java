@@ -32,11 +32,11 @@ public class AnimalService {
         return animal.getCommands();
     }
 
-    public  void addCommandsToAnAnimal(Animal animal, String command){
-        String oldCommand = getCommandAnimal(animal);
-        String newCommand = oldCommand+ ", " +command;
-        animal.setCommands(newCommand);
-    }
+//    public  void addCommandsToAnAnimal(Animal animal, String command){
+//        String oldCommand = getCommandAnimal(animal);
+//        String newCommand = oldCommand+ ", " +command;
+//        animal.setCommands(newCommand);
+//    }
 
     public  int totalAnimals(){
       return  Animal.getCount();

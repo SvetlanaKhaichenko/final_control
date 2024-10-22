@@ -10,7 +10,7 @@ public class AnimalsController {
 
 
 
-    public static Animal getAnimalType(int id, String name, Date birthday, String commands, int id_type){
+    public Animal getAnimalType(int id, String name, Date birthday, String commands, int id_type){
         return service.getAnimalType(id, name, birthday,commands,id_type);
     }
 
@@ -18,9 +18,9 @@ public class AnimalsController {
         return service.getCommandAnimal(animal);
     }
 
-    public  void addCommandsToAnAnimal(Animal animal, String command){
-        service.addCommandsToAnAnimal(animal, command);
-    }
+//    public  void addCommandsToAnAnimal(Animal animal, String command){
+//        service.addCommandsToAnAnimal(animal, command);
+//    }
 
     public  int totalAnimals(){
         return service.totalAnimals();
