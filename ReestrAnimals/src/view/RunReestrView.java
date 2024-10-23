@@ -74,6 +74,9 @@ public class RunReestrView {
     private Animal getAnimal() throws SQLException{
         System.out.println("Enter the ID: ");
         int id = scan.nextInt();
+        if (id <0|| id>totalAnimalsDB()){
+            throw new RuntimeException("the ID is missing from the database");
+        }
         Animal an = controllerDB.getAnimal(id);
         System.out.println(an);
         return an;
@@ -103,13 +106,22 @@ public class RunReestrView {
 
         idType = scan.nextInt();
         System.out.println("Enter a name: ");
-        String name = "";
-        name = scan.next();
+
+        String name = scan.next();
         System.out.println("Enter the date of birth in the format yyyy-mm-dd: ");
-        Date birth = Date.valueOf(scan.next());
+        String date = scan.next();
+
+        Date birth = null;
+        if  (isDateValid(date)){
+        birth = Date.valueOf(date);}
+        else {throw new RuntimeException("Incorrect date");}
         scan.nextLine();
-        System.out.println("Enter the commands: ");
+        System.out.println("Enter the commands separated by a space: ");
         String commands = scan.nextLine();
+        if (!isValidString(commands)){
+            throw new RuntimeException("The field cannot be empty");
+        }
+
         String repcommands = commands.replace(" ", ", ");
         Animal animal = controller.getAnimalType(id, name, birth, repcommands, idType);
         System.out.println();
@@ -142,6 +154,10 @@ public class RunReestrView {
     {
         boolean isValidFormat = date.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})");
         return isValidFormat;
+    }
+
+    private boolean isValidString (String check){
+       return  check != null && !check.isEmpty();
     }
 
 }

@@ -9,7 +9,7 @@ public class DBService {
 
 
     private static final String USER = "root";
-    private static final String PASSWORD = "vfrfh";
+    private static final String PASSWORD = "root";
     private static final String URL = "jdbc:mysql://localhost:3306/AllAnimals";
     public static Connection conn;
     private static Statement stmt;
